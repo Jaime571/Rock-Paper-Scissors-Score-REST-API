@@ -1,5 +1,5 @@
 ![Java](https://img.shields.io/badge/Java-17-orange)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-green)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.x-green)
 ![Maven](https://img.shields.io/badge/Maven-Build-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
