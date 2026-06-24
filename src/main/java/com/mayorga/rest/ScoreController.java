@@ -25,7 +25,7 @@ public class ScoreController {
 	@GetMapping("/score")
 	public Score getScore() {
 		return score;
-	}
+	}	
 	
 	@PatchMapping("/score/wins")
 	public Score updateWins(@RequestParam(name="new-value")int newValue) {
