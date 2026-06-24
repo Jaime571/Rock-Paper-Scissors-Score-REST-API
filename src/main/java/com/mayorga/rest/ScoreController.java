@@ -1,6 +1,7 @@
 package com.mayorga.rest;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,10 +22,33 @@ public class ScoreController {
 		return "Up!";
 	}
 	
+	@GetMapping("/score")
+	public Score getScore() {
+		return score;
+	}
+	
 	@PatchMapping("/score/wins")
 	public Score updateWins(@RequestParam(name="new-value")int newValue) {
 		score.wins = newValue;
 		return score;
+	}
+	
+	@PatchMapping("/score/losses")
+	public Score updateLosses(@RequestParam(name="new-value")int newValue) {
+		score.losses = newValue;
+		return score;
+	}
+	
+	@PatchMapping("/score/ties")
+	public Score updateTies(@RequestParam(name="new-value")int newValue) {
+		score.ties = newValue;
+		return score;
+	}
+	
+//	Not really useful, just to test the HTTP method
+	@DeleteMapping("/score")
+	public void deleteScore() {
+		score = null;
 	}
 	
 	@PutMapping("/score")
@@ -34,13 +58,20 @@ public class ScoreController {
 	}
 	
 	@PostMapping("/score/wins")
-	public Score increaseScore() {
+	public Score increaseWins() {
 		score.wins++;
 		return score;
 	}
 	
-	@GetMapping("/score")
-	public Score getScore() {
+	@PostMapping("/score/losses")
+	public Score increaseLosses() {
+		score.losses++;
+		return score;
+	}
+	
+	@PostMapping("/score/ties")
+	public Score increaseTies() {
+		score.ties++;
 		return score;
 	}
 	
